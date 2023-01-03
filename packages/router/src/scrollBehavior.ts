@@ -153,7 +153,7 @@ export function scrollToPosition(position: ScrollPosition): void {
 }
 
 export function getScrollKey(path: string, delta: number): string {
-  const position: number = history.state ? history.state.position - delta : -1
+  const position: number = (history && history.state) ? history.state.position - delta : -1
   return position + path
 }
 
